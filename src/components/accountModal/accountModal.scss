@@ -1,0 +1,201 @@
+@import "../../global.scss";
+.accountModal {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.61);
+  z-index: 5;
+  display: none;
+  opacity: 1;
+  &.active {
+    display: flex;
+  }
+  .modelContent {
+    z-index: 5;
+    width: 25rem;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    position: relative;
+    opacity: 1;
+    padding: 20px 30px;
+    background-color: #000;
+    border: 1px #f7df39 solid;
+    @include mobile_potrait {
+      width: 20rem;
+    }
+
+    .connectWalletHeader {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 1;
+      margin-bottom: 1rem;
+
+      @include mobile_potrait {
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem;
+      }
+      .connectWalletTitle {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #fff;
+        font-family: Geizer;
+        font-weight: normal;
+        @include mobile_potrait {
+          font-size: 1.5rem;
+        }
+      }
+      .connectModalCloseButton {
+        font-size: 16px;
+        font-weight: 600;
+        border: 2px #f7df39 solid;
+        cursor: pointer;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #000;
+        padding: 0.5rem;
+        transition: all 0.3s ease;
+
+        &:hover {
+          
+        }
+      }
+    }
+
+    .modalWraper {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      flex-direction: column;
+      z-index: 1;
+      span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin-bottom: 1rem;
+        .avatar {
+          width: 3rem;
+        }
+        input {
+          border: none;
+          background-color: #ffffff00;
+          margin-left: 1rem;
+          font-size: 1rem;
+          color: #ddd;
+          width: 8rem;
+          &:focus {
+            outline: none;
+          }
+          @include mobile_potrait {
+            width: 6rem;
+            margin-left: 0.5rem;
+            font-size: 0.8rem;
+          }
+          
+        }
+        .coppyAddressButton {
+          cursor: pointer;
+          border: none;
+          background-color: #ffffff00;
+          color: #f7df39;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 1rem;
+          transition: all 0.3s ease;
+          
+          &:hover {
+            color: #f1df69;
+          }
+          p {
+            margin-left: 0.5rem;
+            transition: all 0.3s ease;
+            @include mobile_potrait {
+              font-size: 0.8rem;
+            }
+            @include mobile_landscape {
+              font-size: 0.8rem;
+            }
+          }
+        }
+      }
+      .modalBtns {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-direction: row;
+        margin: 0 !important;
+        a {
+          cursor: pointer;
+          border: none;
+          background-color: #ffffff00;
+          color: #ddd;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 1rem;
+          transition: all 0.3s ease;
+          text-decoration: none;
+          &:hover {
+            text-shadow: 3px 3px 5px #fff;
+          }
+          .fas {
+            margin-right: 0.5rem;
+          }
+          @include mobile_potrait {
+            font-size: 0.8rem;
+          }
+          @include mobile_landscape {
+            font-size: 0.8rem;
+          }
+        }
+        .disconnect {
+          cursor: pointer;
+          font-size: 1rem;
+          padding: 0.5rem MIN(2rem, 2vw);
+          color: #fff;
+          background-color: #000;
+          border: 2px #f7df39 solid;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: all 0.3s ease;
+          display: flex;
+          position: relative;
+          p {
+            z-index: 1;
+          }
+          &:hover {
+            text-shadow: 0px 0px 15px #fff;
+          }
+          @include mobile_potrait {
+            font-size: 0.8rem;
+          }
+          @include mobile_landscape {
+            font-size: 0.8rem;
+          }
+        }
+      }
+    }
+
+    .bg {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+    }
+  }
+}

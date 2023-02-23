@@ -1,0 +1,264 @@
+@import "../../global.scss";
+.mint{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    @include mobile_potrait{
+        background-size: cover;
+    }
+    @include mobile_landscape{
+    }
+    .scroll{
+        position: absolute;
+        top:-5rem;
+        @include mobile_potrait{
+            top:-5rem;
+        }
+    }
+    .mintContent{
+        width: 80%;
+        z-index: 2;
+        border-radius: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin-top: 5rem;
+        margin-bottom: 3rem;
+        @include mobile_potrait{
+            width: 90%;
+            margin-top: 3rem;
+            margin-bottom: 3rem;
+        }
+        
+        .mintWrapper{
+            width: 100%;
+            height: 90%;
+            display: flex;
+            flex-direction: row;
+            @include mobile_potrait{
+                flex-direction: column;
+            }
+            .left{
+                flex: 0.4;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                @include mobile_potrait{
+                    flex: 1;
+                }
+                img{
+                    width: 100%;
+                    max-width: 450px;
+                    @include mobile_potrait{
+                        margin-bottom: 3rem;
+                    }
+                }
+
+            }
+            .right{
+                flex: 0.6;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                @include mobile_potrait{
+                    flex: 1;
+                }
+                .mintCount{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-around;
+                    flex-direction: row;
+                    margin-bottom: 2rem;
+                    grid-area: auto;
+                    gap: 20px;
+                    @include mobile_potrait{
+                        margin-bottom: 1rem;
+                        width: 90%;
+                    }
+
+                    .mintIncDec{
+                        width: 3rem;
+                        height: 3rem;
+                        border: none;
+                        transition: all 0.5s ease;
+                        cursor: pointer;
+                        font-size: 1.5rem;
+                        font-weight: 600;
+                        position: relative;
+                        overflow: hidden;
+                        background: #58CCFA00;
+                        border: 3px solid #58CCFA;
+                        color: #fff;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        &:hover{
+                            box-shadow: 0px 0px 10px #fff;
+                        }
+                        &:disabled{
+                            border-color: #464646;
+                            cursor:not-allowed;
+                            color: #464646;
+                            @include mobile_potrait{
+                                width: 3rem;
+                                height: 2rem;
+                                font-size: 1rem;
+                                margin: 0.2rem;
+                                border: 2px #464646 solid;
+                            }
+                        }
+                        @include mobile_potrait{
+                            width: 2rem;
+                            height: 2rem;
+                            font-size: 0.8rem;
+                            margin: 0.2rem;
+                            border: 2px #58CCFA solid;
+                        }
+                    }
+                    
+                    .mintCountValue{
+                        width: 2rem;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: 3rem;
+                        font-weight: 400;
+                        color: #fff ;
+                        
+                        @include mobile_potrait{
+                            font-size: 2rem;
+                            margin: 0.2rem;
+                            width: 2rem;
+                        }
+                    }
+                    .mintNow{
+                        font-size: 1.2rem;
+                        font-weight: 700;
+                        padding: 10px 20px;
+                        background: #58CCFA;
+                        border: 3px solid #58CCFA;
+                        color: #000;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        transition: all 0.3s ease;
+                        cursor: pointer;
+                        &:disabled{
+                            border-color: #464646;
+                            &::before {
+                                display: none;
+                            }
+                            @include mobile_potrait{
+                                box-shadow: 0px 4px 0px 0px #474747;
+                            }
+                            @include mobile_landscape{
+                                box-shadow: 0px 4px 0px 0px #474747;
+                            }
+                        }
+                        &:hover{
+                            box-shadow: 0px 0px 10px #fff;
+                            background: #000;
+                            color: #fff;
+                        }
+                        &::before {
+                            content: '';
+                            background-color: #58CCFA;
+                        }
+                        @include mobile_potrait{
+                            font-size: 0.8rem;
+                            padding: 0.5rem 1rem;
+                            margin: 0.2rem;
+                            border: 2px #58CCFA solid;
+                        }
+                    }
+                    .mintDwon{
+                        &::after {
+                            transform: translate3d(-50%, -50%, 0) scale3d(15, 15, 15);
+                        }
+                    }
+                }
+                h1{
+                    font-size: 4rem;
+                    font-family: Geizer;
+                    font-weight: normal;
+                    color: #fff;
+                    width: 100%;
+                    text-align: center;
+                    margin-bottom: 2rem;
+                    @include mobile_potrait{
+                        font-size: 2rem;
+                        text-align: center;
+                    }
+                }
+                .state{
+                    display: flex;
+                    flex-direction: column;
+                    background-color: #000000dd;
+                    border: 2px #58CCFA solid;
+                    border-radius: 5px;
+                    width: 70%;
+                    padding: 20px;
+                    max-width: 450px;
+                    span{
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                    }
+                }
+                p{
+                    font-size: 22px;
+                    color: #fff;
+                    margin-bottom: 0.5rem;
+                    text-shadow: 2px 2px 5px #000000;
+                    @include mobile_potrait{
+                        font-size: 1rem;
+                    }
+                }
+                .countDown{
+                    width: 90%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: row;
+                    background-color: #000000dd;
+                    border: 2px #58CCFA solid;
+                    border-radius: 5px;
+                    padding-top: 1rem;
+                    padding-bottom: 1rem;
+                    margin-bottom: 2rem;
+                    @include mobile_potrait{
+                        width: 100%;
+                        padding-top: 0.5rem;
+                        padding-bottom: 0.5rem;
+                        
+                    }
+                    @include mobile_landscape{
+                        margin-bottom: 0.5rem;
+                        padding-top: 0.5rem;
+                        padding-bottom: 0.5rem;
+                    }
+                }
+
+            }
+        }
+    }
+    .back{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        opacity: 0.5;
+        @include mobile_potrait{
+            object-fit: cover;
+        }
+    }
+}

@@ -1,0 +1,245 @@
+@import "../../global.scss";
+.gallery {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  background-color: #b4f6ff00;
+  justify-content: flex-start;
+  flex-direction: column;
+  border-radius: 5px;
+  @include mobile_potrait {
+    margin-bottom: 0.5rem;
+  }
+  @include mobile_landscape {
+    margin-bottom: 1rem;
+    width: 90%;
+  }
+  .top {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    @include mobile_potrait {
+      width: 100%;
+    }
+    @include mobile_landscape {
+      width: 100%;
+    }
+    p {
+      color: #fff;
+      font-size: 1rem;
+      width: fit-content;
+      text-align: left !important;
+      margin-bottom: 0rem;
+      @include mobile_potrait {
+        font-size: 0.8rem!important;
+      }
+    }
+    button {
+      border: none;
+      padding: 0.3rem 0.5rem;
+      min-width: 6rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 0.8rem;
+      color: #fff;
+      &:hover {
+        text-shadow: 1px 1px 3px black;
+      }
+      @include mobile_potrait {
+        font-size: 0.6rem;
+        min-width: 4rem !important;
+        padding: 0.2rem 0.3rem;
+        width: 4rem !important;
+        ;
+      }
+    }
+    .selectBtn{
+      background-color: #000;
+      border: 1px #f7df39 solid;
+      color: #fff;
+    }
+    .stakeBtn{
+      background-color: #f7df39;
+      border: 1px #f7df39 solid;
+      color: #000;
+      &:hover {
+        background-color: #000;
+        color: #fff;
+      }
+    }
+    .row{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      grid-area: auto;
+      gap: 10px;
+      @include mobile_potrait {
+        flex-direction: column;
+      }
+    }
+  }
+  .imgContent {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    .img_loader {
+      width: 100%;
+      position: absolute;
+      left: calc(50% - 50px);
+    }
+    .noNFT {
+      width: 100%;
+      position: absolute;
+      left: 0;
+      p {
+        width: 100%;
+        text-align: center;
+        font-size: 1rem;
+        @include mobile_potrait {
+          font-size: 0.6rem;
+          min-width: 6rem !important;
+          padding: 0.2rem 0.3rem;
+        }
+      }
+    }
+    .imgDone {
+      display: none;
+    }
+    .slideView {
+      width: 100%;
+      height: calc(8vw + 1rem);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow-x: scroll;
+      overflow-y: hidden;
+      margin-top: 0.5rem;
+      opacity: 0;
+      @include mobile_potrait {
+        height: calc(16vw + 1rem);
+      }
+      .slideList {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        position: absolute;
+        left: 0rem;
+        @include mobile_potrait {}
+        .sideImg {
+          transition: all 0.3s ease;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          margin: 0.5rem;
+          @include mobile_potrait {
+            width: 15vw;
+            margin: 0.3rem;
+          }
+
+          .imgContainer {
+            width: 8vw;
+            height: 8vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px #8e6626 solid;
+            backdrop-filter: blur(5px);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border-radius: 3px;
+            
+            &:hover {
+              box-shadow: 0px 0px 10px #fff;
+              .tokenID {
+                text-shadow: 2px 2px 3px black;
+              }
+            }
+            @include mobile_potrait {
+              width: 15vw;
+              height: 15vw;
+            }
+
+            .tokenID {
+              z-index: 1;
+              position: absolute;
+              top: 3%;
+              right: 4%;
+              background-color: #000;
+              min-width: 30%;
+              width: 40%;
+              color: #fff;
+              border: 1px solid #fff;
+              text-align: center;
+              font-size: 0.8rem;
+              @include mobile_potrait {
+                font-size: 0.6rem;
+              }
+            }
+          }
+          img {
+            width: 99%;
+            height: 99%;
+            transition: all 0.3s ease;
+            @include mobile_potrait {}
+          }
+          p {
+            font-size: 1rem;
+            color: #000;
+            @include mobile_potrait {
+              font-size: 0.6rem;
+            }
+          }
+          .left {
+            width: 100%;
+          }
+        }
+        .selected {
+          .imgContainer {
+            background-color: #8e6626;
+            border: 2px #8e6626 solid;
+            img {
+              opacity: 0.2;
+            }
+          }
+        }
+      }
+      /* width */
+      &::-webkit-scrollbar {
+        height: 8px;
+        @include mobile_potrait {
+          height: 5px;
+        }
+        @include mobile_landscape {
+          height: 5px;
+        }
+      }
+      /* Track */
+      &::-webkit-scrollbar-track {
+        background: #f7df393d;
+      }
+      /* Handle */
+      &::-webkit-scrollbar-thumb {
+        background: #f7df39;
+        transition: all 0.3s ease;
+        border-radius: 8px;
+      }
+      /* Handle on hover */
+      &::-webkit-scrollbar-thumb:hover {
+        background: #cbb62d;
+      }
+    }
+    .done {
+      opacity: 1;
+    }
+  }
+}
